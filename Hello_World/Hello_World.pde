@@ -6,7 +6,7 @@
 size(700, 400); //Able to deploy with fullscreen()
 //
 //Concatenation: , or +
-println("\t\t\tWidth="+Width, "\tHeight="+height);
+println("\t\t\tWidth="+width, "\tHeight="+height);
 println("Display Monitor:, "\twidth:"+displayWidth, "\theight:"+displayheight);
 //
 //Outputting instructions to user when errors with above
