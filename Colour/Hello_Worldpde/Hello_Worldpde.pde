@@ -36,7 +36,8 @@ void setup() {
 } //End setup
 //
 void draw() {
-  //background();
+  // New Background Function "covers" old gray scale background()
+  background(0); //Gray Scale
   rect(xStart, yStart, widthRect, heightRect);
 } //End draw
 //
