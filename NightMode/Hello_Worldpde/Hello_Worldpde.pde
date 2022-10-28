@@ -1,10 +1,10 @@
 //Global Variables
 int appWidth, appHeight;
 float centerX, centerY, xStart, yStart, widthRect, heightRect;
-color blackNightMode=#000000, yellow=#F8FC64, purple=#FA00F6, white=#FFFFFF; //Hexidecimal
-color yellowNightMode=#F8FC00, purpleNightMode=#FA0096;
+color blackNightMode=#000000, yellow=#F8FC64, purple=#FA00F6, white=#FFFFFF; 
+color yellowNightMode=#F8FC00, purpleNightMode=#FA0096;//Hexidecimal
 float thin, normal, thick;
-Boolean nightMode=false, randomBackground=false;
+Boolean grayScale=false, backgroundColour=false, nightMode=false;
 //
 void setup() {
   //Declaring Display Geometry: landscape, square, portrait
@@ -45,15 +45,22 @@ void setup() {
 void draw() {
   // New Background Function "covers" old gray scale background()
   // Night Mode means background cannot have blue // change randome for night mode, hard code "0"
-  //background(100); //Gray Scale (0-255) & Blue Issue for night mode
+  if ( grayScale == true ) background(100); //Gray Scale (0-255) & Blue Issue for night mode
   //
   //Casting Reminder
-  background( color( random(0 , 255), random(0 , 255), random(0 , 255) ) ); // Colour without blue
+  if ( backgroundColour == true ) background( color( random(0 , 255), random(0 , 255), random(0 , 255) ) ); // Colour without blue
   //
-  //background( blackNightMode );
   strokeWeight( thick );
-  stroke( yellow ); //yellowNightMode
-  fill( purple ); //purpleNightMode
+  if ( nightMode == true)
+  {
+    background( blackNightMode );
+    stroke( yellowNightMode ); 
+    fill( purpleNightMode ); 
+  } else
+  {
+    stroke( yellow ); 
+    fill( purple ); 
+  }
   rect(xStart, yStart, widthRect, heightRect);
   fill( white ); //default reset
   stroke( blackNightMode ); //default reset
@@ -61,6 +68,10 @@ void draw() {
 } //End draw
 //
 void keyPressed() {
+  grayScale = false;
+  backgroundColour = false;
+  if ( key == 'G' || key == 'g' ) grayScale = true;
+  if ( key == 'B' || key == 'b' ) backgroundColour = true;
 } //End keyPressed
 //
 void mousePressed() {
