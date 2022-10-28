@@ -1,8 +1,8 @@
 //Global Variables
 int appWidth, appHeight;
 float centerX, centerY, xStart, yStart, widthRect, heightRect;
-color blackNightMode=#000000, yellow=#F8FC64, purple=#FA00F6, white=#FFFFFF; 
-color yellowNightMode=#F8FC00, purpleNightMode=#FA0096;//Hexidecimal
+color blackNightMode=#000000, yellow=#f5f5dc, purple=#A020F0, white=#FFFFFF; 
+color yellowNightMode=#f5f5dc, purpleNightMode=#A020F0;//Hexidecimal
 float thin, normal, thick;
 Boolean grayScale=false, backgroundColour=false, nightMode=false;
 //
@@ -65,6 +65,24 @@ void draw() {
   fill( white ); //default reset
   stroke( blackNightMode ); //default reset
   strokeWeight(1); //default reset
+  //
+  translate(mouseX, mouseY);
+  fill(102);
+  stroke(255);
+  strokeWeight(2);
+  beginShape();
+  vertex(0, -50);
+  vertex(14, -20);
+  vertex(47, -15);
+  vertex(23, 7);
+  vertex(29, 40);
+  vertex(0, 25);
+  vertex(-29, 40);
+  vertex(-23, 7);
+  vertex(-47, -15);
+  vertex(-14, -20);
+  endShape(CLOSE);
+
 } //End draw
 //
 void keyPressed() {
