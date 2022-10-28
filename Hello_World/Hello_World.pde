@@ -50,7 +50,7 @@ void draw() {
   //Casting Reminder
   if ( backgroundColour == true ) background( color( random(0 , 255), random(0 , 255), random(0 , 255) ) ); // Colour without blue
   //
-  strokeWeight( thick );
+  strokeWeight( thin );
   if ( nightMode == true)
   {
     background( blackNightMode );
